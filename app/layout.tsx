@@ -46,7 +46,7 @@ export default function RootLayout({
                     className="font-bold hover:underline"
                     rel="noreferrer"
                   >
-                    David Iglesias
+                    David Iglesias (version 0.1)
                   </a>
                 </p>
               </footer>
