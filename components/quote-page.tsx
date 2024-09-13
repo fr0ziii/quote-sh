@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { getRandomQuote } from "@/app/actions";
 import DeployButton from "./deploy-button";
+import { ThemeSwitcher } from "./theme-switcher";
 
 const quotes: any[] = [];
 
@@ -66,12 +67,12 @@ export default function QuotePage() {
       className={`max-h-screen grow w-full bg-cover bg-center flex flex-col items-center justify-center rounded-3xl p-12`}
     >
       <div className="relative z-10 w-full max-w-6xl">
-        <div className="bg-white bg-opacity-90 p-4 rounded-lg shadow-lg overflow-x-auto mb-4">
+        <div className="bg-background bg-opacity-90 p-4 rounded-lg shadow-lg overflow-x-auto mb-4">
           <div className="flex justify-between items-center">
             <div
               className={`${categoryColors[selectedCategory]} rounded-full p-[3px] flex items-center`}
             >
-              <div className="flex items-stretch gap-2 bg-white rounded-full p-2">
+              <div className="flex items-stretch gap-2 bg-background rounded-full p-2">
               <Quote></Quote> 
                 <p className="text-3xl font-bold whitespace-nowrap items-center">Quote/sh
                 </p>
@@ -86,37 +87,32 @@ export default function QuotePage() {
                   }
                   size="sm"
                   onClick={() => setSelectedCategory(category)}
-                  className={`hover:animate-bounce whitespace-nowrap ${selectedCategory === category ? categoryColors[category] : "bg-white hover:bg-gray-100"} text-primary`}
+                  className={`hover:animate-bounce whitespace-nowrap ${selectedCategory === category ? categoryColors[category] : "bg-background hover:bg-foreground-100"} text-primary`}
                 >
                   {category}
                 </Button>
               ))}
-              <DeployButton />
+              <ThemeSwitcher/>
             </div>
           </div>
         </div>
         <div className={`${categoryColors[selectedCategory]} rounded p-[3px] flex items-center`}>
           <Suspense fallback={<p>Loading feed...</p>}>
-        <Card className="relative z-10 w-full bg-white bg-opacity-90 overflow-hidden  shadow-xl h-[450px]">
+        <Card className="relative z-10 w-full bg-background bg-opacity-90 overflow-hidden  shadow-xl h-[450px]">
           <CardContent className="p-6 md:p-8 h-full overflow-hidden ">
             <ScrollArea className="h-full">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
                 <div className={`${categoryColors[selectedCategory]} w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden flex-shrink-0 shadow-lg}`}>
                 </div>
                 <div className="flex-grow mt-2 text-center md:text-left items-stretch">
-                  <blockquote className="text-2xl md:text-3xl font-bold text-gray-800 mb-2 italic">
+                  <blockquote className="text-2xl md:text-3xl font-bold text-foreground-800 mb-2 italic">
                     {currentQuote.quote}
                   </blockquote>
-                  <cite className="text-xl text-gray-600 block">
+                  <cite className="text-xl text-foreground-600 block">
                     - {currentQuote.author_name}
                   </cite>
                   {currentQuote.author_info && <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-4">
-                    {/* <span
-                      className={`text-sm px-3 py-1 rounded-full ${categoryColors["All"]} text-white`}
-                    >
-                      {"All"}
-                    </span> */}
-                    <span className="text-sm text-gray-500 flex items-center">
+                    <span className="text-sm text-foreground-500 flex items-center">
                       <BookOpen className="w-4 h-4 mr-1" />
                       {currentQuote.author_info}
                     </span>
@@ -132,7 +128,7 @@ export default function QuotePage() {
           <Button
             onClick={changeQuote}
             size="lg"
-            className={`text-white border-white ${categoryColors[selectedCategory]} hover:brightness-110 transition-all duration-300`}
+            className={`text-background border-background ${categoryColors[selectedCategory]} hover:brightness-110 transition-all duration-300`}
           >
             <RefreshCw className="mr-2 h-4 w-4" /> New Quote
           </Button>
@@ -140,7 +136,7 @@ export default function QuotePage() {
             onClick={() => setShowAddQuoteForm(true)}
             size="lg"
             variant="outline"
-            className="bg-white text-gray-800 hover:bg-gray-100"
+            className="bg-background text-foreground hover:bg-foreground-100"
           >
             <PlusCircle className="mr-2 h-4 w-4" /> Request to Add Quote
           </Button>
