@@ -1,7 +1,8 @@
 <h2 align="center">Quote/SH</h2>
-<h3 align="center">A webpage to get a random quote</h3>
+<h3 align="center">A webpage to get a random quote </h3>
 
 ![Quote/SH](image.png)
+
 
 ## Tech Stack
 - Next.js
@@ -15,6 +16,9 @@
 
 ## Live demo
 You can view a fully working demo at [https://quote-sh-vj13.vercel.app/](https://quote-sh-vj13.vercel.app/).
+
+## Version time
+ - <b>V.0.1 ≈ 5hs</b>
 
 
 ## Clone and run locally
