@@ -13,6 +13,7 @@
 ## Features
 - Random quote generator
 - Dark mode support
+- Responsive design
 
 ## Live demo
 You can view a fully working demo at [https://quote-sh-vj13.vercel.app/](https://quote-sh-vj13.vercel.app/).
