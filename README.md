@@ -1,6 +1,18 @@
 <h2 align="center">Quote/SH</h2>
 <h3 align="center">A webpage to get a random quote</h3>
 
+## Tech Stack
+- Next.js
+- Supabase
+- Tailwind CSS
+- Shadcn UI
+
+## Features
+- Random quote generator
+- Dark mode support
+
+## Live demo
+You can view a fully working demo at [https://quote-sh-vj13.vercel.app/](https://quote-sh-vj13.vercel.app/).
 
 
 ## Clone and run locally
