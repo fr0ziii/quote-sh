@@ -64,13 +64,13 @@ export default function QuotePage() {
 
   return (
     <div
-      className={`max-h-screen grow w-full bg-cover bg-center flex flex-col items-center justify-center rounded-3xl p-12`}
+      className={`md:grow w-full bg-cover bg-center flex flex-col items-center justify-center rounded-3xl p-6 md:p-12`}
     >
       <div className="relative z-10 w-full max-w-6xl">
         <div className="bg-background bg-opacity-90 p-4 rounded-lg shadow-lg overflow-x-auto mb-4">
-          <div className="flex justify-between items-center">
+          <div className="flex gap-4 justify-between items-center">
             <div
-              className={`${categoryColors[selectedCategory]} rounded-full p-[3px] flex items-center`}
+              className={`${categoryColors[selectedCategory]} rounded-full p-[3px] flex flex-col lg:flex-row items-center`}
             >
               <div className="flex items-stretch gap-2 bg-background rounded-full p-2">
               <Quote></Quote> 
@@ -78,7 +78,7 @@ export default function QuotePage() {
                 </p>
               </div>
             </div>
-            <div className="flex space-x-2">
+            <div className="flex flex-col lg:flex-row space-y-1 lg:space-x-2">
               {categories.map((category) => (
                 <Button
                   key={category}
@@ -124,7 +124,7 @@ export default function QuotePage() {
         </Card>
         </Suspense>
         </div>
-        <div className="flex gap-8 mt-8 relative z-10 items-center justify-center">
+        <div className="flex flex-col mb-4 md:flex-row gap-4 mt-8 relative z-10 items-center justify-center">
           <Button
             onClick={changeQuote}
             size="lg"
