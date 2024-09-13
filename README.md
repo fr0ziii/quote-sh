@@ -1,6 +1,8 @@
 <h2 align="center">Quote/SH</h2>
 <h3 align="center">A webpage to get a random quote</h3>
 
+![Quote/SH](image.png)
+
 ## Tech Stack
 - Next.js
 - Supabase
