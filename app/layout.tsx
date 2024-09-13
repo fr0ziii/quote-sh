@@ -8,6 +8,7 @@ import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import "./globals.css";
 import { Github, Twitter, X } from "lucide-react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -35,7 +36,9 @@ export default function RootLayout({
         >
           <main className="flex flex-col items-center">
             <div className="min-h-screen w-full flex flex-col items-center">
-              <div className="grow w-full p-8">{children}</div>
+              <div className="grow w-full p-8">
+                {children} <SpeedInsights />
+              </div>
 
               <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-sm gap-4 py-8">
                 <p>
